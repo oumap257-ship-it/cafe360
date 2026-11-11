@@ -1,0 +1,1090 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Café 360 | Luxury African Grill & Garden Café</title>
+
+<meta name="description" content="Discover Café 360 Kakamega. Enjoy delicious Mbuzi Choma, Kienyeji chicken, fresh fish, traditional Kenyan meals and refreshing drinks.">
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<script>
+tailwind.config = {
+theme: {
+extend: {
+colors: {
+forest: '#173D32',
+deep: '#102C24',
+sage: '#77927B',
+copper: '#B96A3B',
+sand: '#E8DCC5',
+cream: '#F8F5EF',
+ink: '#252B26'
+},
+fontFamily: {
+sans: ['DM Sans', 'sans-serif'],
+serif: ['Playfair Display', 'serif']
+}
+}
+}
+}
+</script>
+
+<style>
+* { scroll-behavior: smooth; }
+
+body {
+background: #F8F5EF;
+color: #252B26;
+font-family: 'DM Sans', sans-serif;
+}
+
+.serif { font-family: 'Playfair Display', serif; }
+
+.nav-glass {
+background: rgba(248,245,239,.95);
+backdrop-filter: blur(15px);
+}
+
+.hero {
+background:
+linear-gradient(90deg, rgba(12,34,27,.94), rgba(12,34,27,.72), rgba(12,34,27,.15)),
+url('https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=2000&q=90');
+background-size: cover;
+background-position: center;
+}
+
+.section-label {
+color: #B96A3B;
+letter-spacing: 3px;
+font-size: 11px;
+font-weight: 800;
+text-transform: uppercase;
+}
+
+.food-card {
+transition: .35s ease;
+}
+
+.food-card:hover {
+transform: translateY(-7px);
+box-shadow: 0 20px 40px rgba(23,61,50,.12);
+}
+
+.food-card img {
+transition: transform .6s ease;
+}
+
+.food-card:hover img {
+transform: scale(1.06);
+}
+
+.gallery-img {
+transition: transform .5s ease;
+}
+
+.gallery-img:hover {
+transform: scale(1.04);
+}
+
+.copper-button {
+background: #B96A3B;
+transition: .3s;
+}
+
+.copper-button:hover {
+background: #96512C;
+transform: translateY(-2px);
+}
+
+.whatsapp-float {
+position: fixed;
+bottom: 22px;
+right: 20px;
+z-index: 100;
+width: 58px;
+height: 58px;
+border-radius: 50%;
+background: #25D366;
+color: white;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 28px;
+box-shadow: 0 8px 25px rgba(0,0,0,.2);
+}
+
+.mobile-menu {
+display: none;
+}
+
+.mobile-menu.show {
+display: block;
+}
+
+::selection {
+background: #B96A3B;
+color: white;
+}
+
+input, select, textarea {
+outline: none;
+}
+
+input:focus, select:focus, textarea:focus {
+border-color: #B96A3B !important;
+}
+
+@media(max-width: 768px) {
+.hero {
+background-position: 60% center;
+}
+}
+</style>
+</head>
+
+<body>
+
+<!-- ANNOUNCEMENT BAR -->
+
+<div class="bg-deep text-white text-center py-2 px-3 text-xs tracking-wide">
+<i class="fa-solid fa-location-dot text-sand mr-2"></i>
+KAKAMEGA, KENYA
+<span class="mx-3 text-sage">|</span>
+OPEN DAILY FROM 9:00 AM
+<span class="mx-3 text-sage">|</span>
+<a href="tel:0724297589" class="font-bold text-sand">0724 297 589</a>
+</div>
+
+<!-- NAVIGATION -->
+
+<header class="sticky top-0 z-50 nav-glass border-b border-stone-200">
+
+<div class="max-w-7xl mx-auto px-5">
+
+<div class="h-20 flex justify-between items-center">
+
+<a href="#home" class="flex items-center gap-3">
+
+<div class="w-12 h-12 rounded-full bg-forest text-sand flex items-center justify-center">
+<i class="fa-solid fa-utensils text-xl"></i>
+</div>
+
+<div>
+<h1 class="serif text-2xl font-bold text-forest leading-none">
+CAFÉ 360
+</h1>
+<p class="text-[9px] tracking-[3px] text-copper font-bold mt-1">
+AFRICAN GRILL & CAFÉ
+</p>
+</div>
+
+</a>
+
+<nav class="hidden lg:flex items-center gap-8 text-xs font-bold uppercase tracking-wider text-ink">
+
+<a href="#home" class="hover:text-copper">Home</a>
+<a href="#story" class="hover:text-copper">Our Story</a>
+<a href="#menu" class="hover:text-copper">Menu</a>
+<a href="#experience" class="hover:text-copper">Experience</a>
+<a href="#location" class="hover:text-copper">Visit Us</a>
+
+</nav>
+
+<div class="hidden sm:flex items-center gap-3">
+
+<a href="tel:0724297589" class="text-forest text-sm font-bold">
+<i class="fa-solid fa-phone mr-2"></i>Call Us
+</a>
+
+<button onclick="openBooking()" class="copper-button text-white px-5 py-3 rounded-full text-xs font-bold">
+BOOK A TABLE
+</button>
+
+</div>
+
+<button id="mobileBtn" class="lg:hidden text-forest text-2xl p-2" aria-label="Open navigation menu">
+<i class="fa-solid fa-bars"></i>
+</button>
+
+</div>
+
+<div id="mobileMenu" class="mobile-menu pb-5 space-y-4 text-sm font-bold uppercase">
+<a class="block" href="#home">Home</a>
+<a class="block" href="#story">Our Story</a>
+<a class="block" href="#menu">Our Menu</a>
+<a class="block" href="#experience">Experience</a>
+<a class="block" href="#location">Location</a>
+<button onclick="openBooking()" class="copper-button text-white rounded-full px-5 py-3 w-full">
+Reserve a Table
+</button>
+</div>
+
+</div>
+</header>
+
+<!-- HERO -->
+
+<section id="home" class="hero min-h-[650px] md:min-h-[720px] flex items-center">
+
+<div class="max-w-7xl mx-auto px-6 py-24 w-full">
+
+<div class="max-w-3xl text-white">
+
+<div class="inline-flex items-center gap-3 border border-white/30 bg-white/10 rounded-full px-5 py-2 mb-7 text-xs tracking-widest uppercase">
+<span class="w-2 h-2 rounded-full bg-sand"></span>
+The Taste of Authentic Kenya
+</div>
+
+<h2 class="serif text-5xl sm:text-6xl lg:text-7xl leading-tight font-bold mb-7">
+A Taste of
+<span class="text-sand italic">Tradition.</span>
+<br>
+A Touch of Luxury.
+</h2>
+
+<p class="text-white/80 text-base sm:text-lg leading-8 max-w-xl mb-9">
+Discover the art of authentic African dining. From perfectly grilled Mbuzi Choma to traditional Kenyan delicacies, every meal is an invitation to enjoy something special.
+</p>
+
+<div class="flex flex-col sm:flex-row gap-4">
+
+<a href="#menu" class="copper-button px-8 py-4 rounded-full text-center text-white font-bold text-sm">
+EXPLORE OUR MENU
+<i class="fa-solid fa-arrow-right ml-2"></i>
+</a>
+
+<a href="https://wa.me/254724297589?text=Hello%20Cafe%20360%2C%20I%20would%20like%20to%20make%20an%20order." class="border border-white/60 hover:bg-white hover:text-forest px-8 py-4 rounded-full text-center font-bold text-sm transition">
+<i class="fa-brands fa-whatsapp mr-2"></i>
+ORDER ON WHATSAPP
+</a>
+
+</div>
+
+<div class="flex flex-wrap gap-8 mt-14 pt-8 border-t border-white/20">
+
+<div>
+<p class="serif text-2xl text-sand font-bold">09 AM</p>
+<p class="text-[10px] tracking-widest uppercase text-white/60 mt-1">Daily Opening</p>
+</div>
+
+<div>
+<p class="serif text-2xl text-sand font-bold">Fresh</p>
+<p class="text-[10px] tracking-widest uppercase text-white/60 mt-1">Prepared Meals</p>
+</div>
+
+<div>
+<p class="serif text-2xl text-sand font-bold">Kakamega</p>
+<p class="text-[10px] tracking-widest uppercase text-white/60 mt-1">Our Location</p>
+</div>
+
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- INTRODUCTION -->
+
+<section id="story" class="py-24 px-5">
+
+<div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+
+<div class="grid grid-cols-2 gap-4">
+
+<img
+src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=700&q=85"
+class="rounded-2xl h-64 w-full object-cover"
+alt="Freshly grilled meat">
+
+<img
+src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=700&q=85"
+class="rounded-2xl h-64 w-full object-cover mt-10"
+alt="Premium grilled food">
+
+</div>
+
+<div>
+
+<p class="section-label mb-4">WELCOME TO CAFÉ 360</p>
+
+<h2 class="serif text-4xl sm:text-5xl text-forest font-bold leading-tight mb-6">
+More Than a Meal.
+<br>
+<span class="text-copper italic">It's an Experience.</span>
+</h2>
+
+<p class="text-gray-600 leading-8 text-sm mb-5">
+At Café 360, we celebrate the richness of African cuisine and the joy of bringing people together over good food.
+</p>
+
+<p class="text-gray-600 leading-8 text-sm mb-8">
+Whether you are stopping by for a delicious plate of Mbuzi Choma, enjoying a traditional Kenyan meal with friends, or planning a special gathering, our café offers a welcoming place to make every moment memorable.
+</p>
+
+<div class="border-l-4 border-copper pl-5 mb-8">
+<p class="serif italic text-xl text-forest">
+"Good food. Great company. Unforgettable moments."
+</p>
+</div>
+
+<a href="#menu" class="inline-flex items-center gap-3 font-bold text-forest text-sm border-b-2 border-copper pb-2">
+DISCOVER OUR MENU
+<i class="fa-solid fa-arrow-right text-copper"></i>
+</a>
+
+</div>
+</div>
+</section>
+
+<!-- SIGNATURE DISH -->
+
+<section class="bg-forest py-24 text-white">
+
+<div class="max-w-7xl mx-auto px-5 grid lg:grid-cols-2 gap-14 items-center">
+
+<div class="relative">
+
+<img
+src="https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?auto=format&fit=crop&w=1100&q=90"
+alt="Delicious grilled barbecue platter"
+class="w-full h-[450px] object-cover rounded-3xl shadow-2xl">
+
+<div class="absolute bottom-5 left-5 bg-sand text-forest px-5 py-4 rounded-xl">
+<p class="text-[10px] font-bold uppercase tracking-widest">Our Signature</p>
+<p class="serif text-xl font-bold">Mbuzi Choma</p>
+</div>
+
+</div>
+
+<div>
+
+<p class="text-sand uppercase tracking-[4px] text-xs font-bold mb-5">
+THE CAFÉ 360 SIGNATURE
+</p>
+
+<h2 class="serif text-4xl sm:text-5xl font-bold leading-tight mb-6">
+The Art of
+<span class="text-sand italic">Great Choma.</span>
+</h2>
+
+<p class="text-white/70 leading-8 text-sm mb-7">
+Enjoy delicious goat roast prepared over open charcoal. Pair your meal with fresh kachumbari, traditional greens and soft Kenyan ugali.
+</p>
+
+<div class="grid grid-cols-2 gap-5 mb-9">
+
+<div class="border border-white/20 rounded-xl p-5">
+<i class="fa-solid fa-fire text-sand text-2xl mb-3"></i>
+<h4 class="font-bold text-sm">Charcoal Grilled</h4>
+<p class="text-xs text-white/60 mt-2">Authentic smoky flavours.</p>
+</div>
+
+<div class="border border-white/20 rounded-xl p-5">
+<i class="fa-solid fa-leaf text-sand text-2xl mb-3"></i>
+<h4 class="font-bold text-sm">Fresh Sides</h4>
+<p class="text-xs text-white/60 mt-2">Traditional accompaniments.</p>
+</div>
+
+</div>
+
+<div class="bg-white/10 p-6 rounded-2xl">
+
+<h3 class="font-bold text-lg mb-4">ORDER MBUZI CHOMA</h3>
+
+<div class="grid grid-cols-3 gap-2 mb-4">
+
+<button class="portion-btn bg-copper text-white rounded-lg py-3 text-xs font-bold" onclick="selectPortion(this,'1/4 KG Mbuzi Choma')">
+1/4 KG
+</button>
+
+<button class="portion-btn border border-white/30 rounded-lg py-3 text-xs font-bold" onclick="selectPortion(this,'1/2 KG Mbuzi Choma')">
+1/2 KG
+</button>
+
+<button class="portion-btn border border-white/30 rounded-lg py-3 text-xs font-bold" onclick="selectPortion(this,'1 KG Mbuzi Choma')">
+1 KG
+</button>
+
+</div>
+
+<input id="foodNote" type="text" placeholder="Any special instructions?" class="w-full rounded-lg bg-white text-ink px-4 py-3 text-sm mb-4">
+
+<button onclick="orderMbuzi()" class="w-full bg-[#25D366] hover:bg-green-600 text-white rounded-xl py-4 font-bold text-sm">
+<i class="fa-brands fa-whatsapp mr-2 text-lg"></i>
+ORDER NOW
+</button>
+
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- MENU -->
+
+<section id="menu" class="py-24 px-5">
+
+<div class="max-w-7xl mx-auto">
+
+<div class="text-center mb-14">
+
+<p class="section-label mb-4">A COLLECTION OF FLAVOURS</p>
+
+<h2 class="serif text-4xl sm:text-5xl font-bold text-forest">
+Our Delicious Menu
+</h2>
+
+<p class="text-gray-500 text-sm mt-4">
+Discover something delicious for every occasion.
+</p>
+
+</div>
+
+<!-- FILTERS -->
+
+<div class="flex flex-wrap justify-center gap-3 mb-12">
+
+<button onclick="filterMenu('all',this)" class="filter-btn bg-forest text-white rounded-full px-5 py-3 text-xs font-bold">
+All Dishes
+</button>
+
+<button onclick="filterMenu('grill',this)" class="filter-btn border border-stone-300 rounded-full px-5 py-3 text-xs font-bold">
+Grill & Choma
+</button>
+
+<button onclick="filterMenu('local',this)" class="filter-btn border border-stone-300 rounded-full px-5 py-3 text-xs font-bold">
+Local Delicacies
+</button>
+
+<button onclick="filterMenu('sides',this)" class="filter-btn border border-stone-300 rounded-full px-5 py-3 text-xs font-bold">
+Sides
+</button>
+
+<button onclick="filterMenu('drinks',this)" class="filter-btn border border-stone-300 rounded-full px-5 py-3 text-xs font-bold">
+Drinks
+</button>
+
+</div>
+
+<div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8" id="menuGrid">
+
+<!-- 1 -->
+
+<div class="food-card bg-white rounded-2xl overflow-hidden shadow-sm border border-stone-100" data-category="grill">
+
+<div class="overflow-hidden h-60">
+<img src="https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?auto=format&fit=crop&w=800&q=85" class="w-full h-full object-cover" alt="Mbuzi Choma">
+</div>
+
+<div class="p-6">
+<p class="section-label">HOUSE SPECIALTY</p>
+<h3 class="serif text-xl font-bold text-forest mt-2">Mbuzi Choma</h3>
+<p class="text-gray-500 text-sm leading-6 mt-3">Delicious charcoal-grilled goat meat served with ugali and fresh kachumbari.</p>
+</div>
+
+</div>
+
+<!-- 2 -->
+
+<div class="food-card bg-white rounded-2xl overflow-hidden shadow-sm border border-stone-100" data-category="grill">
+
+<div class="overflow-hidden h-60">
+<img src="https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=800&q=85" class="w-full h-full object-cover" alt="Grilled meat platter">
+</div>
+
+<div class="p-6">
+<p class="section-label">GRILL SELECTION</p>
+<h3 class="serif text-xl font-bold text-forest mt-2">Mixed Grill Platter</h3>
+<p class="text-gray-500 text-sm leading-6 mt-3">A delicious selection of grilled meats for sharing with friends and family.</p>
+</div>
+
+</div>
+
+<!-- 3 -->
+
+<div class="food-card bg-white rounded-2xl overflow-hidden shadow-sm border border-stone-100" data-category="local">
+
+<div class="overflow-hidden h-60">
+<img src="https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=800&q=85" class="w-full h-full object-cover" alt="Roasted chicken">
+</div>
+
+<div class="p-6">
+<p class="section-label">LOCAL FAVOURITE</p>
+<h3 class="serif text-xl font-bold text-forest mt-2">Kienyeji Chicken</h3>
+<p class="text-gray-500 text-sm leading-6 mt-3">Traditional indigenous chicken prepared with rich local flavours.</p>
+</div>
+
+</div>
+
+<!-- 4 -->
+
+<div class="food-card bg-white rounded-2xl overflow-hidden shadow-sm border border-stone-100" data-category="local">
+
+<div class="overflow-hidden h-60">
+<img src="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=800&q=85" class="w-full h-full object-cover" alt="Fresh fish meal">
+</div>
+
+<div class="p-6">
+<p class="section-label">FRESH CATCH</p>
+<h3 class="serif text-xl font-bold text-forest mt-2">Fresh Fish</h3>
+<p class="text-gray-500 text-sm leading-6 mt-3">Enjoy delicious fish fried or prepared in a rich traditional stew.</p>
+</div>
+
+</div>
+
+<!-- 5 -->
+
+<div class="food-card bg-white rounded-2xl overflow-hidden shadow-sm border border-stone-100" data-category="grill">
+
+<div class="overflow-hidden h-60">
+<img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=85" class="w-full h-full object-cover" alt="Grilled pork">
+</div>
+
+<div class="p-6">
+<p class="section-label">GRILL SPECIAL</p>
+<h3 class="serif text-xl font-bold text-forest mt-2">Pork Choma & Fry</h3>
+<p class="text-gray-500 text-sm leading-6 mt-3">Juicy pork cuts grilled or fried to create a satisfying meal.</p>
+</div>
+
+</div>
+
+<!-- 6 -->
+
+<div class="food-card bg-white rounded-2xl overflow-hidden shadow-sm border border-stone-100" data-category="sides">
+
+<div class="overflow-hidden h-60">
+<img src="https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=800&q=85" class="w-full h-full object-cover" alt="Ugali and traditional vegetables">
+</div>
+
+<div class="p-6">
+<p class="section-label">TRADITIONAL SIDES</p>
+<h3 class="serif text-xl font-bold text-forest mt-2">Ugali & Greens</h3>
+<p class="text-gray-500 text-sm leading-6 mt-3">Enjoy ugali served with fresh managu, terere and other traditional greens.</p>
+</div>
+
+</div>
+
+<!-- 7 -->
+
+<div class="food-card bg-white rounded-2xl overflow-hidden shadow-sm border border-stone-100" data-category="sides">
+
+<div class="overflow-hidden h-60">
+<img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=800&q=85" class="w-full h-full object-cover" alt="Fresh salad">
+</div>
+
+<div class="p-6">
+<p class="section-label">FRESH ACCOMPANIMENT</p>
+<h3 class="serif text-xl font-bold text-forest mt-2">Fresh Kachumbari</h3>
+<p class="text-gray-500 text-sm leading-6 mt-3">Fresh tomatoes, onions, coriander and chilli prepared to complement your meal.</p>
+</div>
+
+</div>
+
+<!-- 8 -->
+
+<div class="food-card bg-white rounded-2xl overflow-hidden shadow-sm border border-stone-100" data-category="grill">
+
+<div class="overflow-hidden h-60">
+<img src="https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=800&q=85" class="w-full h-full object-cover" alt="African grilled meat">
+</div>
+
+<div class="p-6">
+<p class="section-label">GRILL APPETIZER</p>
+<h3 class="serif text-xl font-bold text-forest mt-2">Mutura & Sausages</h3>
+<p class="text-gray-500 text-sm leading-6 mt-3">Traditional Kenyan mutura and grilled sausages served hot.</p>
+</div>
+
+</div>
+
+<!-- 9 -->
+
+<div class="food-card bg-white rounded-2xl overflow-hidden shadow-sm border border-stone-100" data-category="drinks">
+
+<div class="overflow-hidden h-60">
+<img src="https://images.unsplash.com/photo-1513558161293-cdaf765edfd4?auto=format&fit=crop&w=800&q=85" class="w-full h-full object-cover" alt="Fresh fruit drinks">
+</div>
+
+<div class="p-6">
+<p class="section-label">REFRESHMENTS</p>
+<h3 class="serif text-xl font-bold text-forest mt-2">Fresh Juices & Drinks</h3>
+<p class="text-gray-500 text-sm leading-6 mt-3">Refresh yourself with chilled beverages and delicious juices.</p>
+</div>
+
+</div>
+
+</div>
+
+<div class="text-center mt-14">
+<p class="text-gray-500 text-xs mb-4">Prices and availability are confirmed directly with the restaurant.</p>
+<a href="https://wa.me/254724297589?text=Hello%20Cafe%20360%2C%20please%20share%20your%20full%20menu%20and%20prices." class="inline-flex items-center gap-3 copper-button text-white rounded-full px-8 py-4 font-bold text-sm">
+<i class="fa-brands fa-whatsapp text-xl"></i>
+ASK FOR FULL MENU & PRICES
+</a>
+</div>
+
+</div>
+</section>
+
+<!-- EXPERIENCE -->
+
+<section id="experience" class="bg-[#EEE9DF] py-24 px-5">
+
+<div class="max-w-7xl mx-auto">
+
+<div class="text-center mb-14">
+
+<p class="section-label mb-4">THE CAFÉ 360 ATMOSPHERE</p>
+
+<h2 class="serif text-4xl sm:text-5xl font-bold text-forest">
+Good Food. Great Moments.
+</h2>
+
+<p class="text-gray-500 text-sm mt-4">
+A place to relax, connect and enjoy every moment.
+</p>
+
+</div>
+
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+
+<div class="overflow-hidden rounded-2xl h-64">
+<img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=700&q=85" class="gallery-img w-full h-full object-cover" alt="Restaurant interior">
+</div>
+
+<div class="overflow-hidden rounded-2xl h-64">
+<img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=700&q=85" class="gallery-img w-full h-full object-cover" alt="Restaurant dining">
+</div>
+
+<div class="overflow-hidden rounded-2xl h-64">
+<img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=700&q=85" class="gallery-img w-full h-full object-cover" alt="Restaurant bar">
+</div>
+
+<div class="overflow-hidden rounded-2xl h-64">
+<img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=700&q=85" class="gallery-img w-full h-full object-cover" alt="Fine dining table">
+</div>
+
+</div>
+
+<div class="mt-14 text-center">
+
+<h3 class="serif text-3xl text-forest font-bold">
+Your Table Is Waiting.
+</h3>
+
+<p class="text-gray-500 text-sm mt-3 mb-6">
+Come hungry. Leave happy.
+</p>
+
+<button onclick="openBooking()" class="copper-button text-white px-9 py-4 rounded-full font-bold text-sm">
+RESERVE YOUR EXPERIENCE
+</button>
+
+</div>
+
+</div>
+</section>
+
+<!-- LOCATION -->
+
+<section id="location" class="py-24 px-5">
+
+<div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+
+<div>
+
+<p class="section-label mb-4">COME FIND US</p>
+
+<h2 class="serif text-4xl sm:text-5xl text-forest font-bold mb-6">
+Visit Café 360.
+<br>
+<span class="italic text-copper">Stay a Little Longer.</span>
+</h2>
+
+<p class="text-gray-500 text-sm leading-7 mb-8">
+Join us in Kakamega for delicious food, great company and a welcoming atmosphere.
+</p>
+
+<div class="space-y-6">
+
+<div class="flex gap-4 items-start">
+<div class="w-12 h-12 bg-[#EEE9DF] rounded-xl flex items-center justify-center text-copper text-xl">
+<i class="fa-solid fa-location-dot"></i>
+</div>
+<div>
+<h4 class="font-bold text-forest">Our Location</h4>
+<p class="text-sm text-gray-500 mt-1">Near Masinde Muliro Avenue, Garden Park Milimani / Vault Retro Lounge area, Kakamega.</p>
+</div>
+</div>
+
+<div class="flex gap-4 items-start">
+<div class="w-12 h-12 bg-[#EEE9DF] rounded-xl flex items-center justify-center text-copper text-xl">
+<i class="fa-solid fa-clock"></i>
+</div>
+<div>
+<h4 class="font-bold text-forest">Opening Hours</h4>
+<p class="text-sm text-gray-500 mt-1">Daily from 9:00 AM till late.</p>
+</div>
+</div>
+
+<div class="flex gap-4 items-start">
+<div class="w-12 h-12 bg-[#EEE9DF] rounded-xl flex items-center justify-center text-copper text-xl">
+<i class="fa-solid fa-phone"></i>
+</div>
+<div>
+<h4 class="font-bold text-forest">Contact & Reservations</h4>
+<a href="tel:0724297589" class="text-copper font-bold mt-1 block">0724 297 589</a>
+</div>
+</div>
+
+</div>
+
+<div class="flex flex-wrap gap-3 mt-9">
+
+<a href="tel:0724297589" class="bg-forest text-white rounded-full px-6 py-4 text-sm font-bold">
+<i class="fa-solid fa-phone mr-2"></i>Call Now
+</a>
+
+<a href="https://wa.me/254724297589" class="bg-[#25D366] text-white rounded-full px-6 py-4 text-sm font-bold">
+<i class="fa-brands fa-whatsapp mr-2"></i>WhatsApp
+</a>
+
+</div>
+
+</div>
+
+<div class="rounded-3xl overflow-hidden border-8 border-white shadow-xl">
+
+<iframe
+title="Café 360 Kakamega map"
+src="https://maps.google.com/maps?q=Garden%20Park%20Milimani%20Kakamega&t=&z=15&ie=UTF8&iwloc=&output=embed"
+width="100%"
+height="480"
+style="border:0;"
+loading="lazy"
+referrerpolicy="no-referrer-when-downgrade"
+allowfullscreen>
+</iframe>
+
+</div>
+
+</div>
+</section>
+
+<!-- FOOTER -->
+
+<footer class="bg-deep text-white pt-16 pb-8 px-5">
+
+<div class="max-w-7xl mx-auto">
+
+<div class="grid md:grid-cols-3 gap-12 pb-12 border-b border-white/10">
+
+<div>
+
+<h2 class="serif text-3xl font-bold text-sand">CAFÉ 360</h2>
+
+<p class="text-sage text-xs tracking-[3px] mt-2">AFRICAN GRILL & CAFÉ</p>
+
+<p class="text-white/60 text-sm leading-7 mt-6 max-w-sm">
+Celebrating authentic African flavours, great food and memorable moments in Kakamega.
+</p>
+
+</div>
+
+<div>
+
+<h3 class="font-bold mb-6">EXPLORE</h3>
+
+<div class="space-y-3 text-sm text-white/60">
+<a href="#home" class="block hover:text-sand">Home</a>
+<a href="#story" class="block hover:text-sand">Our Story</a>
+<a href="#menu" class="block hover:text-sand">Our Menu</a>
+<a href="#experience" class="block hover:text-sand">Experience</a>
+<a href="#location" class="block hover:text-sand">Location</a>
+</div>
+
+</div>
+
+<div>
+
+<h3 class="font-bold mb-6">GET IN TOUCH</h3>
+
+<div class="space-y-4 text-sm text-white/60">
+
+<p><i class="fa-solid fa-location-dot text-sand mr-3"></i>Kakamega, Kenya</p>
+
+<p><i class="fa-solid fa-phone text-sand mr-3"></i>0724 297 589</p>
+
+<p><i class="fa-solid fa-clock text-sand mr-3"></i>Daily, 9 AM till late</p>
+
+<a href="https://wa.me/254724297589" class="inline-flex items-center gap-2 text-sand font-bold">
+<i class="fa-brands fa-whatsapp text-xl"></i>
+Chat with us
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="pt-8 flex flex-col sm:flex-row justify-between gap-4 text-xs text-white/40">
+
+<p>© <span id="year"></span> Café 360 Kakamega. All rights reserved.</p>
+
+<p>Made with care for great food and great moments.</p>
+
+</div>
+
+</div>
+</footer>
+
+<!-- WHATSAPP FLOAT -->
+
+<a href="https://wa.me/254724297589?text=Hello%20Cafe%20360%2C%20I%20would%20like%20to%20make%20an%20inquiry."
+class="whatsapp-float"
+target="_blank"
+rel="noopener noreferrer"
+aria-label="Chat with Cafe 360 on WhatsApp">
+<i class="fa-brands fa-whatsapp"></i>
+</a>
+
+<!-- RESERVATION MODAL -->
+
+<div id="bookingModal" class="fixed inset-0 z-[200] hidden bg-black/70 backdrop-blur-sm items-center justify-center p-4">
+
+<div class="bg-cream w-full max-w-lg rounded-3xl p-7 sm:p-9 relative max-h-[90vh] overflow-y-auto">
+
+<button onclick="closeBooking()" class="absolute top-5 right-5 text-forest text-xl" aria-label="Close reservation form">
+<i class="fa-solid fa-xmark"></i>
+</button>
+
+<div class="text-center mb-7">
+
+<div class="w-14 h-14 rounded-full bg-forest text-sand flex items-center justify-center mx-auto text-xl mb-4">
+<i class="fa-solid fa-calendar-check"></i>
+</div>
+
+<p class="section-label">CAFÉ 360 KAKAMEGA</p>
+
+<h2 class="serif text-3xl text-forest font-bold mt-2">
+Reserve Your Table
+</h2>
+
+<p class="text-gray-500 text-xs mt-2">
+Complete your details and send your request via WhatsApp.
+</p>
+
+</div>
+
+<form id="bookingForm" class="space-y-4">
+
+<div>
+<label class="block text-xs font-bold text-forest mb-2">FULL NAME</label>
+<input id="customerName" required type="text" placeholder="Your name" class="w-full border border-stone-300 bg-white rounded-xl p-4 text-sm">
+</div>
+
+<div>
+<label class="block text-xs font-bold text-forest mb-2">PHONE NUMBER</label>
+<input id="customerPhone" required type="tel" placeholder="Your phone number" class="w-full border border-stone-300 bg-white rounded-xl p-4 text-sm">
+</div>
+
+<div>
+<label class="block text-xs font-bold text-forest mb-2">WHAT WOULD YOU LIKE?</label>
+<select id="bookingType" class="w-full border border-stone-300 bg-white rounded-xl p-4 text-sm">
+<option>Table Reservation</option>
+<option>1/4 KG Mbuzi Choma</option>
+<option>1/2 KG Mbuzi Choma</option>
+<option>1 KG Mbuzi Choma</option>
+<option>Kienyeji Chicken</option>
+<option>Fish Meal</option>
+<option>Group Order / Event</option>
+</select>
+</div>
+
+<div>
+<label class="block text-xs font-bold text-forest mb-2">DATE & TIME</label>
+<input id="bookingDate" type="datetime-local" class="w-full border border-stone-300 bg-white rounded-xl p-4 text-sm">
+</div>
+
+<div>
+<label class="block text-xs font-bold text-forest mb-2">ADDITIONAL DETAILS</label>
+<textarea id="bookingDetails" rows="3" placeholder="Number of guests, special requests, etc." class="w-full border border-stone-300 bg-white rounded-xl p-4 text-sm"></textarea>
+</div>
+
+<button type="submit" class="w-full bg-forest hover:bg-deep text-white rounded-xl py-4 font-bold text-sm">
+<i class="fa-brands fa-whatsapp mr-2 text-lg"></i>
+SEND BOOKING REQUEST
+</button>
+
+<p class="text-center text-gray-400 text-[10px]">
+Your request will be sent to Café 360 for confirmation.
+</p>
+
+</form>
+
+</div>
+</div>
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+// MOBILE NAVIGATION
+
+const mobileBtn = document.getElementById('mobileBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+
+mobileBtn.addEventListener('click', () => {
+mobileMenu.classList.toggle('show');
+
+const icon = mobileBtn.querySelector('i');
+
+icon.classList.toggle('fa-bars');
+icon.classList.toggle('fa-xmark');
+});
+
+document.querySelectorAll('#mobileMenu a').forEach(link => {
+link.addEventListener('click', () => {
+mobileMenu.classList.remove('show');
+
+const icon = mobileBtn.querySelector('i');
+icon.classList.add('fa-bars');
+icon.classList.remove('fa-xmark');
+});
+});
+
+// MENU FILTER
+
+function filterMenu(category, button) {
+
+const cards = document.querySelectorAll('.food-card');
+const buttons = document.querySelectorAll('.filter-btn');
+
+buttons.forEach(btn => {
+btn.classList.remove('bg-forest','text-white');
+btn.classList.add('border','border-stone-300');
+});
+
+button.classList.add('bg-forest','text-white');
+button.classList.remove('border','border-stone-300');
+
+cards.forEach(card => {
+if (category === 'all' || card.dataset.category === category) {
+card.style.display = 'block';
+} else {
+card.style.display = 'none';
+}
+});
+
+}
+
+// MBUZI ORDER
+
+let selectedPortion = '1/4 KG Mbuzi Choma';
+
+function selectPortion(button, portion) {
+
+selectedPortion = portion;
+
+document.querySelectorAll('.portion-btn').forEach(btn => {
+btn.classList.remove('bg-copper','text-white');
+btn.classList.add('border','border-white/30');
+});
+
+button.classList.add('bg-copper','text-white');
+button.classList.remove('border','border-white/30');
+
+}
+
+function orderMbuzi() {
+
+const note = document.getElementById('foodNote').value;
+
+let message = `Hello Café 360! I would like to order ${selectedPortion}.`;
+
+if(note.trim()) {
+message += ` Additional instructions: ${note}`;
+}
+
+message += ' Please confirm availability and price.';
+
+window.open(
+'https://wa.me/254724297589?text=' + encodeURIComponent(message),
+'_blank'
+);
+
+}
+
+// BOOKING MODAL
+
+const bookingModal = document.getElementById('bookingModal');
+
+function openBooking() {
+bookingModal.classList.remove('hidden');
+bookingModal.classList.add('flex');
+document.body.style.overflow = 'hidden';
+}
+
+function closeBooking() {
+bookingModal.classList.add('hidden');
+bookingModal.classList.remove('flex');
+document.body.style.overflow = '';
+}
+
+// BOOKING WHATSAPP DISPATCH
+
+document.getElementById('bookingForm').addEventListener('submit', function(e) {
+
+e.preventDefault();
+
+const name = document.getElementById('customerName').value.trim();
+const phone = document.getElementById('customerPhone').value.trim();
+const type = document.getElementById('bookingType').value;
+const date = document.getElementById('bookingDate').value;
+const details = document.getElementById('bookingDetails').value.trim();
+
+const message =
+`Hello Café 360! I would like to make a booking.
+
+Name: ${name}
+Customer Phone: ${phone}
+Request: ${type}
+Date & Time: ${date || 'To be confirmed'}
+Additional Details: ${details || 'None'}
+
+Please confirm my request and availability. Thank you!`;
+
+window.open(
+'https://wa.me/254724297589?text=' + encodeURIComponent(message),
+'_blank'
+);
+
+});
+
+// CLOSE MODAL WHEN CLICKING OUTSIDE
+
+bookingModal.addEventListener('click', function(e) {
+if(e.target === bookingModal) {
+closeBooking();
+}
+});
+
+// FOOTER YEAR
+
+document.getElementById('year').textContent = new Date().getFullYear();
+
+</script>
+
+</body>
+</html>
